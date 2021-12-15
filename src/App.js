@@ -9,13 +9,14 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
 //component
-import reducers from './rdx/reducers';
+import reducers from './store/reducers';
+import Header from "./components/Header";
 
 function App() {
   return (
     <Router>
       <Provider store={createStore(reducers,{}, applyMiddleware(thunk))}>
-        <h1>zaniar</h1>
+        <Header />
       </Provider>
     </Router>
   );
