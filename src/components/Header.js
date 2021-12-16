@@ -3,12 +3,13 @@ import { FaGithub } from "react-icons/fa";
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
+import { Link } from "react-router-dom";
 
 //Component
 import styles from '../assets/styles/my-style.module.css';
 
 function Header(props) {
-    
+
     return (
         <div className={styles.headerContainer}>
             <Box sx={{ flexGrow: 1 }}>
@@ -23,21 +24,21 @@ function Header(props) {
                     </Grid>
 
                     <Grid item xs md={6} />
-                    
+
                     <Grid item xs={12} md>
                         <Stack style={{ height: '100%' }}
                             direction="row"
                             justifyContent="center"
                             alignItems="center"
-                            >
+                        >
                             <ul>
                                 <Stack
                                     direction="row"
                                     justifyContent="space-between"
                                     alignItems="center"
-                                    >
-                                    <props.link className={styles.btnMenu} to="/">Home</props.link>
-                                    <props.link className={styles.btnMenu} to="/about">About</props.link>
+                                >
+                                    <Link className={styles.btnMenu} to="/">Home</Link>
+                                    <Link className={styles.btnMenu} to="/about">About</Link>
                                 </Stack>
                             </ul>
                         </Stack>

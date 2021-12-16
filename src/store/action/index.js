@@ -1,6 +1,6 @@
 import { getUsersByName } from "../../services/Connections";
 import { GET_USERS_BY_NAME } from "../../services/Constants";
-import { CLOSE_ALERT, DISPLAY_ALERT, RECEIVED_USERS_RESULT, SEARCH_INPUT_VALUE_CHANGED, START_SEARCH_USERS_BY_NAME } from "./Type";
+import { CLEAR_USERS_RESULT, CLOSE_ALERT, DISPLAY_ALERT, RECEIVED_USERS_RESULT, SEARCH_INPUT_VALUE_CHANGED, START_SEARCH_USERS_BY_NAME } from "./Type";
 
 export const handleSearchForUsers = inputValue => async dispatch => {
     try {
@@ -31,5 +31,11 @@ export const handleChangeSearchInputValue = event => {
     return {
         type: SEARCH_INPUT_VALUE_CHANGED,
         payload: event.target.value,
+    }
+}
+
+export const handleClearUsersResult = () => {
+    return {
+        type: CLEAR_USERS_RESULT,
     }
 }

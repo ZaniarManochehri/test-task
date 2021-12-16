@@ -10,3 +10,11 @@ export const getUsersByName = async (url, params) => {
        console.error(error);
    }
 }
+
+export const hetOneUserByName = async () => {
+    try {
+        
+    } catch (error) {
+        console.error(error);
+    }
+}

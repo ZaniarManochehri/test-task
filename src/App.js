@@ -11,7 +11,7 @@ import thunk from 'redux-thunk';
 //component
 import reducers from './store/reducers';
 import Header from "./components/Header";
-import {Home, About, NotFoundPage} from './pages';
+import {Home, About, NotFoundPage, ShowUser} from './pages';
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
+            <Route path='/user/:id' element={<ShowUser />} />
 
             <Route path="*" element={<NotFoundPage />} />
           </Routes>

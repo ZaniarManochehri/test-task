@@ -8,7 +8,7 @@ function UserItem(props) {
       borderColor="divider"
       gridColumn="span 4"
       sx={{
-        width: '85%',
+        width: '97%',
         height: '150%',
         backgroundColor: 'white',
         display: 'flex',

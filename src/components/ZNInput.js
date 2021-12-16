@@ -31,6 +31,7 @@ function ZNInput(props) {
   return (
     <BootstrapInput
       fullWidth defaultValue={props.searchInputValue}
+      value={props.searchInputValue}
       onChange={event => props.handleChangeSearchInputValue(event)}
       placeholder="Search User..."
       autoComplete='off'

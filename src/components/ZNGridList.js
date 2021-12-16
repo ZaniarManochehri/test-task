@@ -10,15 +10,18 @@ import UserItemChildren from '../parts/UserItemChildren';
 
 function ZNGridList(props) {
     let { usersResult } = props;
+    console.log(usersResult)
     const renderView = () => {
         if (usersResult.length !== 0) {
             return (
                 <Box sx={{ flexGrow: 1, marginTop: 4 }}>
                     <Grid container rowSpacing={15}  >
-                        {usersResult.map((_, index) => (
+                        {usersResult.map((item, index) => (
                             <Grid item xs={4} sm={4} md={4} key={index}>
                                 <UserItem>
-                                    <UserItemChildren />
+                                    <UserItemChildren 
+                                    // @ts-ignore
+                                    id= {item.id} avatar={item.avatar_url} name={item.login} />
                                 </UserItem>
                             </Grid>
                         ))}

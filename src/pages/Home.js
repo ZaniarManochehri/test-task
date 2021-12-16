@@ -1,12 +1,16 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import CircularProgress from '@mui/material/CircularProgress';
+
+//Component
 import ZNInput from '../components/ZNInput';
 import ZNButton from '../components/ZNButton';
 import ZNAlert from '../components/ZNAlert';
 import ZNGridList from '../components/ZNGridList';
-import { handleSearchForUsers } from '../store/action';
+import { handleClearUsersResult, handleSearchForUsers } from '../store/action';
+import ZNProgress from '../components/ZNProgress';
 
 function Home(props) {
     return (
@@ -30,8 +34,11 @@ function Home(props) {
                         backgroundColor="#f4f4f4"
                         display={props.usersResult.length !== 0 ? 'flex' : 'none'}
                         color="#333"
-                        onClick={() => props.handleSearchForUsers(props.searchInputValue)}
+                        onClick={() => props.handleClearUsersResult()}
                     />
+
+                    <ZNProgress />
+
                     <ZNGridList />
                 </Grid>
 
@@ -43,10 +50,10 @@ function Home(props) {
 }
 
 const mapStateToProps = state => {
-    return{
+    return {
         searchInputValue: state.home.searchInputValue,
         usersResult: state.home.usersResult,
     }
 }
 
-export default connect(mapStateToProps, {handleSearchForUsers})(Home);
+export default connect(mapStateToProps, { handleSearchForUsers, handleClearUsersResult })(Home);
