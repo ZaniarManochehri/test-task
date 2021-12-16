@@ -4,7 +4,7 @@ function About(props) {
     let {children} = props;
     return(
         <div>
-            {children}
+            <h1>about</h1>
         </div>
     )
 }

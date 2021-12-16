@@ -4,7 +4,7 @@ function NotFoundPage(props) {
     let {children} = props;
     return(
         <div>
-            {children}
+            <h1>NotFoundPage</h1>
         </div>
     )
 }
