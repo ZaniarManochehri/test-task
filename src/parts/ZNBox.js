@@ -5,11 +5,12 @@ function ZNBox(props) {
     let {bgcolor, color, text} = props;
     return(
         <Box sx={{
-            width: 130,
+            width: 95,
             bgcolor,
             color,
             borderRadius: 2,
-            height: 20,
+            height: 15,
+            fontSize: 12,
             p: 1
         }}>
             {text}
