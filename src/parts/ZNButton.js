@@ -4,10 +4,10 @@ import Button from '@mui/material/Button';
 import { connect } from 'react-redux';
 
 function ZNButton(props) {
-    const { backgroundColor, text, display, color, onClick } = props;
+    const { backgroundColor, text, display, color, onClick, width = '100%' } = props;
     const ColorButton = styled(Button)(({ theme }) => ({
         marginTop: 20,
-        width: '100%',
+        width,
         fontSize: 20,
         backgroundColor,
         color,

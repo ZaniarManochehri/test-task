@@ -1,10 +1,13 @@
 import React from 'react';
 
+//Component
+import styles from '../assets/styles/my-style.module.css';
+
 function About(props) {
-    let {children} = props;
     return(
-        <div>
-            <h1>about</h1>
+        <div className={styles.aboutContainer}>
+            <h1>About Page</h1>
+            <p>This app is github search</p>
         </div>
     )
 }

@@ -2,15 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import CircularProgress from '@mui/material/CircularProgress';
 
 //Component
-import ZNInput from '../components/ZNInput';
-import ZNButton from '../components/ZNButton';
-import ZNAlert from '../components/ZNAlert';
-import ZNGridList from '../components/ZNGridList';
+import ZNInput from '../parts/ZNInput';
+import ZNButton from '../parts/ZNButton';
+import ZNAlert from '../parts/ZNAlert';
+import ZNGridList from '../parts/ZNGridList';
 import { handleClearUsersResult, handleSearchForUsers } from '../store/action';
-import ZNProgress from '../components/ZNProgress';
+import ZNProgress from '../parts/ZNProgress';
 
 function Home(props) {
     return (

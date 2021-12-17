@@ -1,4 +1,11 @@
-import { CLEAR_USERS_RESULT, CLOSE_ALERT, DISPLAY_ALERT, RECEIVED_USERS_RESULT, SEARCH_INPUT_VALUE_CHANGED, START_SEARCH_USERS_BY_NAME } from "../action/Type";
+import {
+    CLEAR_USERS_RESULT,
+    CLOSE_ALERT,
+    DISPLAY_ALERT,
+    RECEIVED_USERS_RESULT,
+    SEARCH_INPUT_VALUE_CHANGED,
+    START_SEARCH_USERS_BY_NAME,
+} from "../action/Type";
 
 /* eslint-disable import/no-anonymous-default-export */
 const INITIAL_STATE = {
@@ -37,11 +44,11 @@ export default (state = INITIAL_STATE, action) => {
                 loading: false,
                 searchInputValue: '',
             };
-            case CLEAR_USERS_RESULT:
-                return{
-                    ...state,
-                    usersResult: [],
-                }
+        case CLEAR_USERS_RESULT:
+            return {
+                ...state,
+                usersResult: [],
+            }
         default:
             return state;
     }

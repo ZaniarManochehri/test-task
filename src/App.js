@@ -11,17 +11,17 @@ import thunk from 'redux-thunk';
 //component
 import reducers from './store/reducers';
 import Header from "./components/Header";
-import {Home, About, NotFoundPage, ShowUser} from './pages';
+import {Home, About, NotFoundPage, ShowUser} from './loader';
 
 function App() {
   return (
     <Router>
       <Provider store={createStore(reducers,{}, applyMiddleware(thunk))}>
-        <Header link={Link} />
+        <Header />
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/user/:id' element={<ShowUser />} />
+            <Route path='about' element={<About />} />
+            <Route path='user/:name' element={<ShowUser />} />
 
             <Route path="*" element={<NotFoundPage />} />
           </Routes>

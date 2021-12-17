@@ -1,9 +1,11 @@
 import React from 'react';
 
+//Component
+import styles from '../assets/styles/my-style.module.css';
+
 function NotFoundPage(props) {
-    let {children} = props;
     return(
-        <div>
+        <div className={styles.aboutContainer}>
             <h1>NotFoundPage</h1>
         </div>
     )
