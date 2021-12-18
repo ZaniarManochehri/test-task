@@ -36,9 +36,10 @@ function Home(props) {
                         onClick={() => props.handleClearUsersResult()}
                     />
 
-                    <ZNProgress />
-
-                    <ZNGridList />
+                    {
+                        props.loading ? <ZNProgress /> : <ZNGridList />
+                    }
+                   
                 </Grid>
 
                 <Grid item xs />
@@ -52,6 +53,7 @@ const mapStateToProps = state => {
     return {
         searchInputValue: state.home.searchInputValue,
         usersResult: state.home.usersResult,
+        loading: state.home.loading,
     }
 }
 

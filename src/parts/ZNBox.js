@@ -9,7 +9,7 @@ function ZNBox(props) {
             bgcolor,
             color,
             borderRadius: 2,
-            height: 15,
+            height: 25,
             fontSize: 12,
             p: 1
         }}>

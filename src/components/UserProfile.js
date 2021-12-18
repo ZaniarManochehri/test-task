@@ -14,9 +14,11 @@ function UserProfile(props) {
         userName,
         bio,
         url,
+        htmlUrl,
         login,
         blog,
         company,
+        location,
     } = props;
     const above900 = useMediaQuery('(min-width:900px)');
     return (
@@ -41,7 +43,7 @@ function UserProfile(props) {
                                 sx={{ width: 150, height: 150 }}
                                 src={avatarUrl} />
                             <span>{userName}</span>
-                            <span>San Francisco Bay Area</span>
+                            <span>{location}</span>
                         </Stack>
                     </Stack>
                 </Grid>
@@ -56,7 +58,7 @@ function UserProfile(props) {
                         <Button
                             style={{ backgroundColor: 'black' }}
                             variant="contained"
-                            href={url}
+                            href={htmlUrl}
                         >
                             Visit Github Page
                         </Button>

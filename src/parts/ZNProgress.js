@@ -49,7 +49,7 @@ function ZNProgress(props) {
       flexGrow: 1,
       width: '100%',
       height: 80,
-      display: props.loading ? 'flex' : 'none',
+      display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
     }}>
@@ -61,6 +61,7 @@ function ZNProgress(props) {
 const mapStateToProps = state => {
   return{
     loading: state.home.loading,
+    userDetails: state.user.userDetails,
   }
 }
 export default connect(mapStateToProps, null)(ZNProgress);

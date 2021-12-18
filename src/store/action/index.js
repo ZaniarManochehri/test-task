@@ -7,6 +7,7 @@ import {
     RECEIVED_ONE_USER_DETAILS,
     RECEIVED_USERS_RESULT,
     SEARCH_INPUT_VALUE_CHANGED,
+    START_GETTING_USER_DETAILS,
     START_SEARCH_USERS_BY_NAME,
 } from "./Type";
 
@@ -51,6 +52,7 @@ export const handleClearUsersResult = () => {
 
 export const handleGetUserDetails = userName => async dispatch => {
     try {
+        dispatch({type: START_GETTING_USER_DETAILS})
         let userDetails = await getOneUserByName(`${GET_ONE_USER_BY_NAME}/${userName}`);
         let userRepos = await getUserRepos(`${GET_ONE_USER_BY_NAME}/${userName}/repos`);
         let details = userDetails?.data;
