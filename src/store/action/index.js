@@ -57,7 +57,7 @@ export const handleGetUserDetails = userName => async dispatch => {
         let userRepos = await getUserRepos(`${GET_ONE_USER_BY_NAME}/${userName}/repos`);
         let details = userDetails?.data;
         let repos = userRepos?.data;
-        console.log(repos)
+        console.log('zzz', repos)
         dispatch({ type: RECEIVED_ONE_USER_DETAILS, payload: { details, repos } });
     } catch (error) {
         console.error(error);

@@ -26,17 +26,18 @@ function ShowUser(props) {
     }, [])
 
     let showUserView = () => {
-        let { userDetails, loading } = props;
-        if (loading) {
+        console.log(props.loading, props.userDetails)
+        if (props.loading) {
             return <ZNProgress />
         } else {
             let hireableIcon = <CloseIcon sx={{ color: pink[500] }} />;
-            let hireable = userDetails.hireable;
-            if (hireable !== null) {
-                hireableIcon = hireable ? <CheckIcon color="success" /> : <CloseIcon sx={{ color: pink[500] }} />
-            }
-            return (
-                <Grid container spacing={2}>
+            if(props.userDetails !== undefined){
+                let hireable = props.userDetails.hireable;
+                if (hireable !== null && hireable !== null) {
+                    hireableIcon = hireable ? <CheckIcon color="success" /> : <CloseIcon sx={{ color: pink[500] }} />
+                }
+                return (
+                    <Grid container spacing={2}>
                     <Grid item xs={12}>
                         <Stack alignItems="center" justifyContent="flex-start" direction="row" spacing={2}>
                             <ZNButton
@@ -54,21 +55,21 @@ function ShowUser(props) {
                     <Grid item xs={12}>
                         <UserProfile
                             userName={params.name}
-                            url={userDetails.url}
-                            htmlUrl={userDetails.html_url}
-                            login={userDetails.login}
-                            company={userDetails.company}
-                            blog={userDetails.blog}
-                            bio={userDetails.bio}
-                            location={userDetails.location}
-                            avatarUrl={userDetails.avatar_url} />
+                            url={props.userDetails.url}
+                            htmlUrl={props.userDetails.html_url}
+                            login={props.userDetails.login}
+                            company={props.userDetails.company}
+                            blog={props.userDetails.blog}
+                            bio={props.userDetails.bio}
+                            location={props.userDetails.location}
+                            avatarUrl={props.userDetails.avatar_url} />
                     </Grid>
                     <Grid item xs={12}>
                         <UserSummaryDetails
-                            followers={userDetails.followers}
-                            following={userDetails.following}
-                            publicRepo={userDetails.public_rep}
-                            publicGists={userDetails.public_gi}
+                            followers={props.userDetails.followers}
+                            following={props.userDetails.following}
+                            publicRepo={props.userDetails.public_rep}
+                            publicGists={props.userDetails.public_gi}
                         />
                     </Grid>
                     {
@@ -79,7 +80,8 @@ function ShowUser(props) {
                         ))
                     }
                 </Grid>
-            )
+                )
+            }
         }
     }
 
