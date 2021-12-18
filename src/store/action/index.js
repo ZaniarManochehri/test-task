@@ -12,6 +12,7 @@ import {
 
 export const handleSearchForUsers = inputValue => async dispatch => {
     try {
+        console.log('inputValue');
         if (inputValue === '') {
             dispatch({ type: DISPLAY_ALERT });
             setTimeout(() => {

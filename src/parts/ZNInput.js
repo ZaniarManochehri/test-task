@@ -4,7 +4,7 @@ import InputBase from '@mui/material/InputBase';
 import { connect } from 'react-redux';
 
 //Component
-import { handleChangeSearchInputValue } from '../store/action';
+import { handleChangeSearchInputValue, handleSearchForUsers } from '../store/action';
 
 const BootstrapInput = styled(InputBase)(({ theme }) => ({
   'label + &': {
@@ -30,11 +30,18 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
 }));
 
 function ZNInput(props) {
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      props.handleSearchForUsers(event.target.value);
+    }
+  }
+
   return (
     <BootstrapInput
       fullWidth defaultValue={props.searchInputValue}
       value={props.searchInputValue}
       onChange={event => props.handleChangeSearchInputValue(event)}
+      onKeyDown={(event) => handleKeyDown(event)}
       placeholder="Search User..."
       autoComplete='off'
       id="bootstrap-input" />
@@ -47,4 +54,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {handleChangeSearchInputValue})(ZNInput);
+export default connect(mapStateToProps, { handleChangeSearchInputValue, handleSearchForUsers })(ZNInput);
