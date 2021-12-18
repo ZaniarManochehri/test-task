@@ -11,7 +11,9 @@ function ZNBox(props) {
             borderRadius: 2,
             height: 20,
             fontSize: 12,
-            p: 1
+            p: 1,
+            display: 'flex',
+            justifyContent: 'center',
         }}>
             {text}
         </Box>
