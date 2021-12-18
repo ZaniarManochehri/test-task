@@ -36,13 +36,13 @@ function UserSummaryDetails(props) {
                         <ZNBox
                             bgcolor='success.main'
                             color='success.contrastText'
-                            text={`Public Repos : ${publicRepo}`}
+                            text={`Public Repos : ${publicRepo === undefined ? 0 : publicRepo}`}
                         />
 
                         <ZNBox
                             bgcolor='text.primary'
                             color='background.paper'
-                            text={`Public Gists : ${publicGists}`}
+                            text={`Public Gists : ${publicGists === undefined ? 0 : publicGists}`}
                         />
 
                     </Stack>

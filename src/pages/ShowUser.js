@@ -26,7 +26,6 @@ function ShowUser(props) {
     }, [])
 
     let showUserView = () => {
-        console.log(props.loading, props.userDetails)
         if (props.loading) {
             return <ZNProgress />
         } else {
