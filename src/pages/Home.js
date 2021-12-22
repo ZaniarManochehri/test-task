@@ -4,12 +4,14 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
 //Component
-import ZNInput from '../parts/ZNInput';
-import ZNButton from '../parts/ZNButton';
-import ZNAlert from '../parts/ZNAlert';
-import ZNGridList from '../parts/ZNGridList';
-import { handleClearUsersResult, handleSearchForUsers } from '../store/action';
-import ZNProgress from '../parts/ZNProgress';
+import {
+    ZNInput,
+    ZNButton,
+    ZNAlert,
+    ZNGridList,
+    ZNProgress
+} from '../loader';
+import {handleClearUsersResult, handleSearchForUsers} from '../store/action';
 
 function Home(props) {
     return (
@@ -39,7 +41,7 @@ function Home(props) {
                     {
                         props.loading ? <ZNProgress /> : <ZNGridList />
                     }
-                   
+
                 </Grid>
 
                 <Grid item xs />

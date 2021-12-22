@@ -1,8 +1,7 @@
 import React from 'react';
 
 //Component
-import styles from '../assets/styles/my-style.module.css';
-import BorderedLayout from '../parts/BorderedLayout';
+import {styles, BorderedLayout} from '../../loader';
 
 function UserDetailsItem(props) {
     let { text, url } = props;

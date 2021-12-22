@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 
 //Component
-import styles from '../assets/styles/my-style.module.css';
+import styles from '../../assets/styles/my-style.module.css';
 
 function UserItemChildren(props) {
     return (

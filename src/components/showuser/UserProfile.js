@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 
 //Component
-import BorderedLayout from '../parts/BorderedLayout';
+import BorderedLayout from '../../parts/showuser/BorderedLayout';
 
 function UserProfile(props) {
     let {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 //Component
-import styles from '../assets/styles/my-style.module.css';
+import {styles} from '../loader';
 
 function NotFoundPage(props) {
     return(

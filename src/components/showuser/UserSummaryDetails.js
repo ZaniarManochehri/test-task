@@ -4,8 +4,8 @@ import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 
 //Component
-import BorderedLayout from '../parts/BorderedLayout';
-import ZNBox from '../parts/ZNBox';
+import BorderedLayout from '../../parts/showuser/BorderedLayout';
+import ZNBox from '../../parts/showuser/ZNBox';
 
 function UserSummaryDetails(props) {
     let {followers, following, publicRepo, publicGists} =props;

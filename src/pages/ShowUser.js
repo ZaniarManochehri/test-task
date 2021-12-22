@@ -10,12 +10,14 @@ import { pink } from '@mui/material/colors';
 import { useNavigate } from 'react-router-dom';
 
 //Component
-import ZNButton from "../parts/ZNButton";
-import UserProfile from "../components/UserProfile";
-import UserSummaryDetails from "../components/UserSummaryDetails";
-import UserDetailsItem from "../components/UserDetailsItem";
-import { handleGetUserDetails } from '../store/action';
-import ZNProgress from '../parts/ZNProgress';
+import {
+    ZNButton,
+    UserProfile,
+    UserSummaryDetails,
+    UserDetailsItem,
+    ZNProgress
+} from '../loader';
+import {handleGetUserDetails} from '../store/action';
 
 function ShowUser(props) {
     let params = useParams();
@@ -30,55 +32,55 @@ function ShowUser(props) {
             return <ZNProgress />
         } else {
             let hireableIcon = <CloseIcon sx={{ color: pink[500] }} />;
-            if(props.userDetails !== undefined){
+            if (props.userDetails !== undefined) {
                 let hireable = props.userDetails.hireable;
                 if (hireable !== null && hireable !== null) {
                     hireableIcon = hireable ? <CheckIcon color="success" /> : <CloseIcon sx={{ color: pink[500] }} />
                 }
                 return (
                     <Grid container spacing={2}>
-                    <Grid item xs={12}>
-                        <Stack alignItems="center" justifyContent="flex-start" direction="row" spacing={2}>
-                            <ZNButton
-                                // @ts-ignore
-                                text="Back To Search"
-                                backgroundColor="#f4f4f4"
-                                color="#333"
-                                width={200}
-                                onClick={() => navigate('/')}
+                        <Grid item xs={12}>
+                            <Stack alignItems="center" justifyContent="flex-start" direction="row" spacing={2}>
+                                <ZNButton
+                                    // @ts-ignore
+                                    text="Back To Search"
+                                    backgroundColor="#f4f4f4"
+                                    color="#333"
+                                    width={200}
+                                    onClick={() => navigate('/')}
+                                />
+                                <span>hireable:</span>
+                                {hireableIcon}
+                            </Stack>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <UserProfile
+                                userName={params.name}
+                                url={props.userDetails.url}
+                                htmlUrl={props.userDetails.html_url}
+                                login={props.userDetails.login}
+                                company={props.userDetails.company}
+                                blog={props.userDetails.blog}
+                                bio={props.userDetails.bio}
+                                location={props.userDetails.location}
+                                avatarUrl={props.userDetails.avatar_url} />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <UserSummaryDetails
+                                followers={props.userDetails.followers}
+                                following={props.userDetails.following}
+                                publicRepo={props.userDetails.public_rep}
+                                publicGists={props.userDetails.public_gi}
                             />
-                            <span>hireable:</span>
-                            {hireableIcon}
-                        </Stack>
+                        </Grid>
+                        {
+                            props.userRepos.map(item => (
+                                <Grid item xs={12} key={item.id}>
+                                    <UserDetailsItem text={item.name} url={item.html_url} />
+                                </Grid>
+                            ))
+                        }
                     </Grid>
-                    <Grid item xs={12}>
-                        <UserProfile
-                            userName={params.name}
-                            url={props.userDetails.url}
-                            htmlUrl={props.userDetails.html_url}
-                            login={props.userDetails.login}
-                            company={props.userDetails.company}
-                            blog={props.userDetails.blog}
-                            bio={props.userDetails.bio}
-                            location={props.userDetails.location}
-                            avatarUrl={props.userDetails.avatar_url} />
-                    </Grid>
-                    <Grid item xs={12}>
-                        <UserSummaryDetails
-                            followers={props.userDetails.followers}
-                            following={props.userDetails.following}
-                            publicRepo={props.userDetails.public_rep}
-                            publicGists={props.userDetails.public_gi}
-                        />
-                    </Grid>
-                    {
-                        props.userRepos.map(item => (
-                            <Grid item xs={12} key={item.id}>
-                                <UserDetailsItem text={item.name} url={item.html_url} />
-                            </Grid>
-                        ))
-                    }
-                </Grid>
                 )
             }
         }

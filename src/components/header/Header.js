@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import { Link } from "react-router-dom";
 
 //Component
-import styles from '../assets/styles/my-style.module.css';
+import styles from '../../assets/styles/my-style.module.css';
 
 function Header(props) {
 

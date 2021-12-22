@@ -4,7 +4,7 @@ import InputBase from '@mui/material/InputBase';
 import { connect } from 'react-redux';
 
 //Component
-import { handleChangeSearchInputValue, handleSearchForUsers } from '../store/action';
+import {handleChangeSearchInputValue, handleSearchForUsers} from '../../store/action';
 
 const BootstrapInput = styled(InputBase)(({ theme }) => ({
   'label + &': {

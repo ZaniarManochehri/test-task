@@ -1,12 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Box from '@mui/material/Box';
-import UserItem from '../components/UserItemList';
+import UserItem from '../../components/home/UserItemList';
 import Grid from '@mui/material/Grid';
 
 //Component
-import UserItemChildren from '../components/UserItemChildrenList';
-
+import {UserItemChildren} from '../../loader';
 
 function ZNGridList(props) {
     let { usersResult } = props;
